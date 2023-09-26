@@ -1,0 +1,6 @@
+def hello() -> None:
+    print("Hello")
+    return None
+
+hello()
+
