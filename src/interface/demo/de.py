@@ -1,13 +1,12 @@
-import dearpygui.dearpygui as dpg
-import dearpygui.demo as demo
+import customtkinter
 
-dpg.create_context()
-dpg.create_viewport(title='Custom Title', width=600, height=600)
+app = customtkinter.CTk()
 
-demo.show_demo()
+text_widget = customtkinter.CTkTextbox(app)
+text_widget.pack()
 
-dpg.setup_dearpygui()
-dpg.show_viewport()
-dpg.start_dearpygui()
-dpg.destroy_context()
+text_widget.insert('end', 'This is some colored text.\n')
+text_widget.tag_add('color', '1.5', '1.11')  # '1.5' means first line, 5th character; '1.11' means first line, 11th character
+text_widget.tag_config('color', foreground='red')
 
+app.mainloop()
